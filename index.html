@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Berufliches Profil von Simon Glashauser: IT-Betrieb, Automatisierung, Softwareentwicklung und AI-gestützte Arbeitsabläufe aus einer Hand.">
+  <meta name="theme-color" content="#101a17">
+  <title>Simon Glashauser – IT-Betrieb, Entwicklung &amp; Automatisierung</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17221f;
+      --muted: #5b6964;
+      --paper: #f3f0e9;
+      --paper-strong: #fffdf8;
+      --line: #d8d5cd;
+      --forest: #153f35;
+      --forest-soft: #dfe9e3;
+      --copper: #b65f3b;
+      --copper-soft: #f3e2d8;
+      --shadow: 0 18px 55px rgba(30, 45, 39, 0.09);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 4%, rgba(182, 95, 59, 0.12), transparent 24rem),
+        linear-gradient(180deg, #f7f5ef 0%, var(--paper) 100%);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .skip-link {
+      position: fixed; left: 18px; top: 12px; z-index: 100;
+      transform: translateY(-150%); padding: 10px 14px; border-radius: 10px;
+      background: var(--ink); color: white;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid rgba(216, 213, 205, 0.86);
+      background: rgba(247, 245, 239, 0.88); backdrop-filter: blur(16px);
+    }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand {
+      display: inline-flex; align-items: center; gap: 11px; text-decoration: none;
+      font-weight: 800; letter-spacing: -0.02em;
+    }
+    .brand-mark {
+      display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+      background: var(--forest); color: #f9f6ee; font-size: 0.78rem; letter-spacing: 0;
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.91rem; font-weight: 700; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--forest); }
+    .hero { padding: 96px 0 76px; }
+    .hero-grid {
+      display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(290px, 0.65fr);
+      gap: 72px; align-items: end;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; margin-bottom: 24px;
+      color: var(--forest); font-size: 0.82rem; font-weight: 800;
+      letter-spacing: 0.11em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--copper); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 820px; margin-bottom: 26px; font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.2rem, 7vw, 6.3rem); font-weight: 500;
+      letter-spacing: -0.055em; line-height: 0.98;
+    }
+    h1 em { color: var(--copper); font-weight: 500; }
+    .hero-copy {
+      max-width: 760px; margin-bottom: 34px; color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.32rem); line-height: 1.65;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 50px; padding: 12px 20px; border: 1px solid transparent;
+      border-radius: 999px; cursor: pointer; text-decoration: none; font-weight: 800;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--forest); color: white; }
+    .button-primary:hover { background: #0d3028; }
+    .button-secondary { border-color: var(--line); background: rgba(255,255,255,0.55); color: var(--ink); }
+    .button-secondary:hover { border-color: #a6afa9; }
+    .arrow { font-size: 1.1em; }
+    .profile-note { border-left: 2px solid var(--copper); padding: 6px 0 6px 24px; }
+    .profile-note strong { display: block; margin-bottom: 8px; font-size: 1.05rem; }
+    .profile-note p { margin: 0; color: var(--muted); }
+    .facts {
+      display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line);
+      border-radius: var(--radius); background: rgba(255, 253, 248, 0.7);
+      box-shadow: var(--shadow); overflow: hidden;
+    }
+    .fact { padding: 25px 26px; border-right: 1px solid var(--line); }
+    .fact:last-child { border-right: 0; }
+    .fact strong { display: block; margin-bottom: 3px; color: var(--forest); font-size: 1.22rem; }
+    .fact span { color: var(--muted); font-size: 0.9rem; }
+    section { padding: 92px 0; }
+    .section-intro {
+      display: grid; grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1fr);
+      gap: 50px; align-items: start; margin-bottom: 42px;
+    }
+    .kicker { color: var(--copper); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.13em; text-transform: uppercase; }
+    h2 {
+      margin-bottom: 14px; font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.15rem, 4vw, 3.65rem); font-weight: 500;
+      letter-spacing: -0.035em; line-height: 1.08;
+    }
+    .section-lead { max-width: 730px; margin-bottom: 0; color: var(--muted); font-size: 1.07rem; }
+    .capability-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .capability {
+      min-height: 260px; padding: 32px; border: 1px solid var(--line);
+      border-radius: var(--radius); background: var(--paper-strong);
+    }
+    .capability-index { color: var(--copper); font-weight: 900; font-size: 0.78rem; letter-spacing: 0.1em; }
+    .capability h3 { margin: 46px 0 12px; font-size: 1.35rem; letter-spacing: -0.02em; }
+    .capability p { margin-bottom: 0; color: var(--muted); }
+    .projects-section { background: var(--forest); color: #f7f3ea; }
+    .projects-section .kicker { color: #e49a78; }
+    .projects-section .section-lead { color: #c7d4cf; }
+    .project-list { border-top: 1px solid rgba(255,255,255,0.18); }
+    .project {
+      display: grid; grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.4fr) minmax(180px, 0.55fr);
+      gap: 32px; align-items: start; padding: 31px 0; border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
+    .project h3 { margin: 0; font-size: 1.18rem; }
+    .project p { margin: 0; color: #c7d4cf; }
+    .project-result { color: #f2b89d; font-size: 0.87rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; }
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .principle { padding-top: 22px; border-top: 3px solid var(--copper); }
+    .principle h3 { margin-bottom: 10px; font-size: 1.18rem; }
+    .principle p { color: var(--muted); margin-bottom: 0; }
+    .experience-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.7fr); gap: 70px; }
+    .career { border-top: 1px solid var(--line); }
+    .career-row {
+      display: grid; grid-template-columns: 155px 1fr; gap: 26px;
+      padding: 25px 0; border-bottom: 1px solid var(--line);
+    }
+    .career-time { color: var(--copper); font-size: 0.86rem; font-weight: 900; }
+    .career-row h3 { margin-bottom: 6px; font-size: 1.08rem; }
+    .career-row p { margin-bottom: 0; color: var(--muted); }
+    .toolbox { align-self: start; padding: 28px; border-radius: var(--radius); background: var(--forest-soft); }
+    .toolbox h3 { margin-bottom: 18px; }
+    .toolbox ul { list-style: none; margin: 0; padding: 0; }
+    .toolbox li { padding: 11px 0; border-top: 1px solid rgba(21,63,53,0.15); color: #314d45; }
+    .toolbox li:first-child { border-top: 0; padding-top: 0; }
+    .toolbox strong { color: var(--forest); }
+    .cta { padding: 74px; border-radius: 30px; background: var(--copper-soft); text-align: center; }
+    .cta h2 { max-width: 720px; margin-inline: auto; }
+    .cta p { max-width: 650px; margin: 0 auto 28px; color: var(--muted); }
+    footer { padding: 34px 0 46px; }
+    .footer-inner {
+      display: flex; justify-content: space-between; gap: 24px; padding-top: 25px;
+      border-top: 1px solid var(--line); color: var(--muted); font-size: 0.88rem;
+    }
+    dialog {
+      width: min(560px, calc(100% - 32px)); padding: 0; border: 0; border-radius: 24px;
+      background: var(--paper-strong); box-shadow: 0 28px 90px rgba(16, 31, 25, 0.28); color: var(--ink);
+    }
+    dialog::backdrop { background: rgba(10, 24, 19, 0.66); backdrop-filter: blur(4px); }
+    .dialog-inner { padding: 34px; }
+    .dialog-top { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
+    .dialog-top h2 { font-size: 2rem; }
+    .close-button {
+      width: 42px; height: 42px; flex: 0 0 auto; border: 1px solid var(--line);
+      border-radius: 50%; background: transparent; cursor: pointer; font-size: 1.4rem;
+    }
+    .privacy-note {
+      margin: 22px 0 0; padding: 18px; border-radius: 14px;
+      background: var(--forest-soft); color: #314d45; font-size: 0.92rem;
+    }
+    :focus-visible { outline: 3px solid #e59b79; outline-offset: 4px; }
+    @media (max-width: 860px) {
+      .nav-links a { display: none; }
+      .nav-links a.button { display: inline-flex; }
+      .hero { padding-top: 68px; }
+      .hero-grid, .section-intro, .experience-layout { grid-template-columns: 1fr; gap: 36px; }
+      .profile-note { max-width: 560px; }
+      .facts { grid-template-columns: repeat(2, 1fr); }
+      .fact:nth-child(2) { border-right: 0; }
+      .fact:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .project { grid-template-columns: 1fr; gap: 10px; }
+      .principles { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .nav { min-height: 64px; }
+      .brand-mark { width: 31px; height: 31px; }
+      .nav-links { gap: 0; }
+      .nav-links .button { min-height: 40px; padding: 8px 13px; font-size: 0.82rem; }
+      .hero { padding: 54px 0 44px; }
+      h1 { font-size: clamp(2.75rem, 14vw, 4rem); }
+      section { padding: 68px 0; }
+      .facts, .capability-grid { grid-template-columns: 1fr; }
+      .fact { border-right: 0; border-bottom: 1px solid var(--line); }
+      .fact:nth-child(3) { border-bottom: 1px solid var(--line); }
+      .fact:last-child { border-bottom: 0; }
+      .capability { min-height: 0; }
+      .capability h3 { margin-top: 28px; }
+      .career-row { grid-template-columns: 1fr; gap: 6px; }
+      .cta { padding: 42px 22px; }
+      .footer-inner { flex-direction: column; gap: 7px; }
+      .dialog-inner { padding: 25px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Zur Startseite">
+        <span class="brand-mark" aria-hidden="true">SG</span><span>Simon Glashauser</span>
+      </a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#kompetenzen">Kompetenzen</a><a href="#projekte">Projekte</a><a href="#erfahrung">Erfahrung</a>
+        <a class="button button-primary" href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">IT-Praxis seit 2010</span>
+          <h1>Systeme verstehen. <em>Lösungen bauen.</em></h1>
+          <p class="hero-copy">Ich verbinde langjährige Erfahrung im IT-Betrieb mit Softwareentwicklung, Automatisierung und modernen KI-Werkzeugen. So entstehen nicht nur Konzepte, sondern funktionierende, dokumentierte und dauerhaft betreibbare Lösungen.</p>
+          <div class="actions">
+            <a class="button button-primary" href="#projekte">Ausgewählte Arbeiten <span class="arrow" aria-hidden="true">↓</span></a>
+            <button class="button button-secondary" type="button" data-open-cv>Lebenslauf anfragen</button>
+          </div>
+        </div>
+        <aside class="profile-note" aria-label="Kurzprofil">
+          <strong>IT-Generalist mit End-to-End-Blick</strong>
+          <p>Von der ersten unklaren Idee über Umsetzung und Test bis zum verlässlichen Betrieb.</p>
+        </aside>
+      </div>
+    </section>
+    <div class="wrap facts" aria-label="Profil auf einen Blick">
+      <div class="fact"><strong>Seit 2010</strong><span>praktische IT-Erfahrung</span></div>
+      <div class="fact"><strong>IHK</strong><span>ausgebildeter Fachinformatiker</span></div>
+      <div class="fact"><strong>Breites Profil</strong><span>Betrieb, Entwicklung, Automatisierung</span></div>
+      <div class="fact"><strong>Niederbayern</strong><span>regional, hybrid oder remote</span></div>
+    </div>
+    <section id="kompetenzen">
+      <div class="wrap">
+        <div class="section-intro">
+          <span class="kicker">Was ich einbringe</span>
+          <div><h2>Breite Erfahrung statt enger Werkzeugliste.</h2><p class="section-lead">Technologien ändern sich. Entscheidend ist, komplexe Zusammenhänge schnell zu erfassen, passende Lösungen umzusetzen und sie zuverlässig in den Alltag zu überführen.</p></div>
+        </div>
+        <div class="capability-grid">
+          <article class="capability"><span class="capability-index">01 / BETRIEB</span><h3>Infrastruktur zuverlässig betreiben</h3><p>Server, Netzwerke, Endgeräte und Dienste strukturiert aufbauen, absichern, überwachen und auch unter Druck handlungsfähig halten.</p></article>
+          <article class="capability"><span class="capability-index">02 / AUTOMATISIERUNG</span><h3>Wiederholung in Werkzeuge verwandeln</h3><p>Manuelle Abläufe analysieren und durch Skripte, Regeln, Schnittstellen und nachvollziehbare Prüfungen dauerhaft vereinfachen.</p></article>
+          <article class="capability"><span class="capability-index">03 / ENTWICKLUNG</span><h3>Software mit Praxisbezug entwickeln</h3><p>Webanwendungen, Integrationen und spezialisierte Werkzeuge von der Idee bis zur nutzbaren Lösung konzipieren und umsetzen.</p></article>
+          <article class="capability"><span class="capability-index">04 / AI-WORKFLOWS</span><h3>KI kontrolliert produktiv einsetzen</h3><p>AI-Werkzeuge in Entwicklung, Analyse und Dokumentation einbinden – mit klaren Regeln, überprüfbaren Ergebnissen und menschlicher Verantwortung.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="projects-section" id="projekte">
+      <div class="wrap">
+        <div class="section-intro">
+          <span class="kicker">Ausgewählte Arbeiten</span>
+          <div><h2>Probleme lösen – in ganz unterschiedlichen Welten.</h2><p class="section-lead">Die Beispiele zeigen die Spannweite meiner Arbeit. Details und interne Informationen bleiben bewusst außen vor.</p></div>
+        </div>
+        <div class="project-list">
+          <article class="project"><h3>Selbst gehostete Finanzanwendung</h3><p>Entwicklung und Betrieb einer Webanwendung für Haushaltsplanung, Auswertungen und komplexe Abrechnungszeiträume – inklusive Datenmodell, API und produktiver Bereitstellung.</p><span class="project-result">Produkt &amp; Betrieb</span></article>
+          <article class="project"><h3>Lokale Multi-AI-Arbeitsumgebung</h3><p>Eine strukturierte Plattform, in der unterschiedliche AI-Werkzeuge planen, Aufgaben aufteilen, Ergebnisse prüfen und den Projektstand nachvollziehbar dokumentieren.</p><span class="project-result">AI &amp; Orchestrierung</span></article>
+          <article class="project"><h3>Sicherer Dienstbetrieb mit Erweiterungen</h3><p>Verantwortung für Betrieb, Updates, Backups, Wiederherstellbarkeit und eigene Erweiterungen einer dauerhaft genutzten Community-Plattform.</p><span class="project-result">Operations &amp; Entwicklung</span></article>
+          <article class="project"><h3>Werkzeuge für Transport-Simulationen</h3><p>Entwicklung mehrerer Analyse- und Automatisierungswerkzeuge in C# und Squirrel – mit gemeinsamem Quellcode, sicheren Standardmodi und reproduzierbaren Tests.</p><span class="project-result">Mods &amp; Qualität</span></article>
+          <article class="project"><h3>Interaktive Wissens- und Weltenplattform</h3><p>Strukturierte Daten als zentrale Quelle für Karte, Wiki, Reader und Zeitleiste – konsistent modelliert und automatisiert für das Web aufbereitet.</p><span class="project-result">Daten &amp; Web</span></article>
+        </div>
+      </div>
+    </section>
+    <section id="arbeitsweise">
+      <div class="wrap">
+        <div class="section-intro">
+          <span class="kicker">Arbeitsweise</span>
+          <div><h2>Pragmatisch, gründlich und nachvollziehbar.</h2><p class="section-lead">Ich arbeite mich schnell in unbekannte Umgebungen ein, ohne vorschnelle Annahmen zur Grundlage einer Lösung zu machen.</p></div>
+        </div>
+        <div class="principles">
+          <article class="principle"><h3>Verstehen, bevor ich verändere</h3><p>Bestehende Systeme, Abhängigkeiten und Risiken zuerst erfassen. Danach folgt die kleinste sinnvolle und überprüfbare Änderung.</p></article>
+          <article class="principle"><h3>Ergebnisse belegbar machen</h3><p>Ein erfolgreicher Start ist noch keine Abnahme. Tests, Messwerte und verständliche Dokumentation zeigen, was wirklich funktioniert.</p></article>
+          <article class="principle"><h3>Verantwortung bis zum Betrieb</h3><p>Eine Lösung ist erst dann gut, wenn sie im Alltag verständlich, wartbar, wiederherstellbar und für andere sicher nutzbar ist.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="erfahrung">
+      <div class="wrap">
+        <div class="section-intro">
+          <span class="kicker">Erfahrung</span>
+          <div><h2>Entwicklung und Betrieb gehören für mich zusammen.</h2><p class="section-lead">Mein beruflicher Weg reicht von Anwendungsentwicklung und Inhouse-IT über selbstständige Systembetreuung bis zu Beratung und Infrastrukturprojekten.</p></div>
+        </div>
+        <div class="experience-layout">
+          <div class="career">
+            <article class="career-row"><span class="career-time">Seit 2024</span><div><h3>IT-Consulting und Infrastrukturprojekte</h3><p>Analyse, Konzeption, technische Umsetzung und Automatisierung in anspruchsvollen Betriebsumgebungen.</p></div></article>
+            <article class="career-row"><span class="career-time">2019–2024</span><div><h3>Systemadministration und IT-Betreuung</h3><p>Verantwortung für Server, Netzwerke, Support, Beschaffung, Rollouts und den stabilen Arbeitsalltag unterschiedlicher Organisationen.</p></div></article>
+            <article class="career-row"><span class="career-time">2014–2019</span><div><h3>Anwendungsentwicklung</h3><p>Entwicklung individueller Software- und Weblösungen, Schnittstellen, Systemintegration und technische Beratung.</p></div></article>
+            <article class="career-row"><span class="career-time">2010–2014</span><div><h3>IT-Einstieg und IHK-Ausbildung</h3><p>Praktischer Einstieg mit anschließender Ausbildung zum Fachinformatiker und breitem Fundament in Entwicklung und Systemtechnik.</p></div></article>
+          </div>
+          <aside class="toolbox" aria-label="Technisches Fundament">
+            <h3>Technisches Fundament</h3>
+            <ul>
+              <li><strong>Systeme:</strong> Linux, Windows Server, macOS</li>
+              <li><strong>Automatisierung:</strong> Python, PowerShell, Bash, Ansible</li>
+              <li><strong>Entwicklung:</strong> Webanwendungen, APIs, Datenmodelle</li>
+              <li><strong>Plattformen:</strong> Docker, Kubernetes, Git</li>
+              <li><strong>AI:</strong> agentische Workflows, lokale Modelle, Multi-Agent-Systeme</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section id="kontakt">
+      <div class="wrap">
+        <div class="cta">
+          <span class="kicker">Kontakt</span><h2>Passt mein Profil zu Ihrer Aufgabe?</h2>
+          <p>Den vollständigen Lebenslauf mit persönlichen Kontaktdaten stelle ich gern gezielt zur Verfügung.</p>
+          <button class="button button-primary" type="button" data-open-cv>Lebenslauf anfragen <span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> Simon Glashauser</span><span>Berufliches Kurzprofil · Pilsting, Niederbayern</span></div></footer>
+  <dialog id="cv-dialog" aria-labelledby="cv-title">
+    <div class="dialog-inner">
+      <div class="dialog-top"><div><span class="kicker">Lebenslauf</span><h2 id="cv-title">Gern persönlich anfragen.</h2></div><button class="close-button" type="button" data-close-cv aria-label="Dialog schließen">×</button></div>
+      <p>Bitte nutzen Sie für Ihre Anfrage den Kontaktweg, über den Sie dieses Profil erhalten haben. Ich sende Ihnen anschließend gern meinen vollständigen und aktuellen Lebenslauf.</p>
+      <p class="privacy-note"><strong>Warum kein direkter Download?</strong><br>Der Lebenslauf enthält persönliche Kontaktdaten und wird deshalb nicht frei im Internet bereitgestellt.</p>
+    </div>
+  </dialog>
+  <script>
+    const cvDialog = document.getElementById('cv-dialog');
+    document.querySelectorAll('[data-open-cv]').forEach((button) => button.addEventListener('click', () => cvDialog.showModal()));
+    document.querySelector('[data-close-cv]').addEventListener('click', () => cvDialog.close());
+    cvDialog.addEventListener('click', (event) => { if (event.target === cvDialog) cvDialog.close(); });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
