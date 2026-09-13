@@ -128,6 +128,21 @@
     .capability-index { color: var(--copper); font-weight: 900; font-size: 0.78rem; letter-spacing: 0.1em; }
     .capability h3 { margin: 46px 0 12px; font-size: 1.35rem; letter-spacing: -0.02em; }
     .capability p { margin-bottom: 0; color: var(--muted); }
+    .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .practice-card {
+      display: flex; flex-direction: column; min-height: 330px; padding: 30px;
+      border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper-strong);
+    }
+    .practice-card.featured { background: var(--forest-soft); border-color: #b9ccc3; }
+    .practice-meta {
+      margin-bottom: 20px; color: var(--copper); font-size: 0.76rem;
+      font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .practice-card h3 { margin-bottom: 12px; font-size: 1.24rem; line-height: 1.35; }
+    .practice-card p { margin-bottom: 18px; color: var(--muted); }
+    .practice-list { margin: auto 0 0; padding: 18px 0 0; border-top: 1px solid var(--line); list-style: none; }
+    .practice-list li { margin-top: 7px; color: #40514b; font-size: 0.9rem; }
+    .practice-list li::before { content: "– "; color: var(--copper); font-weight: 900; }
     .projects-section { background: var(--forest); color: #f7f3ea; }
     .projects-section .kicker { color: #e49a78; }
     .projects-section .section-lead { color: #c7d4cf; }
@@ -194,6 +209,8 @@
       .fact:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
       .project { grid-template-columns: 1fr; gap: 10px; }
       .principles { grid-template-columns: 1fr; }
+      .practice-grid { grid-template-columns: 1fr; }
+      .practice-card { min-height: 0; }
     }
     @media (max-width: 600px) {
       .wrap { width: min(100% - 28px, 1120px); }
@@ -229,7 +246,7 @@
         <span class="brand-mark" aria-hidden="true">SG</span><span>Simon Glashauser</span>
       </a>
       <nav class="nav-links" aria-label="Hauptnavigation">
-        <a href="#kompetenzen">Kompetenzen</a><a href="#projekte">Projekte</a><a href="#erfahrung">Erfahrung</a>
+        <a href="#kompetenzen">Kompetenzen</a><a href="#berufspraxis">Berufspraxis</a><a href="#projekte">Projekte</a><a href="#erfahrung">Werdegang</a>
         <a class="button button-primary" href="#kontakt">Kontakt</a>
       </nav>
     </div>
@@ -272,6 +289,49 @@
         </div>
       </div>
     </section>
+    <section id="berufspraxis">
+      <div class="wrap">
+        <div class="section-intro">
+          <span class="kicker">Konkrete Berufspraxis</span>
+          <div><h2>Was ich heute tue – und worauf es aufbaut.</h2><p class="section-lead">Das breite Profil ist kein Gegenentwurf zum klassischen IT-Betrieb. Es ist über viele Jahre aus konkreter Verantwortung in Beratung, Inhouse-IT, Administration und Entwicklung entstanden.</p></div>
+        </div>
+        <div class="practice-grid">
+          <article class="practice-card featured">
+            <span class="practice-meta">Aktuell · IT-Consulting</span>
+            <h3>Enterprise-Infrastruktur und technische Umsetzung</h3>
+            <p>In einem großen industriellen Projektumfeld begleite ich Infrastruktur- und Migrationsaufgaben von der Anforderung bis zum belastbaren technischen Nachweis.</p>
+            <ul class="practice-list">
+              <li>Windows-Server-Konfiguration und automatisierte Bereitstellung</li>
+              <li>Ansible, PowerShell und sichere Remote-Administration</li>
+              <li>Oracle-Clientanbindungen, Netzwerk- und Zertifikatsanalyse</li>
+              <li>Dokumentation, Tickets und Abstimmung zwischen beteiligten Teams</li>
+            </ul>
+          </article>
+          <article class="practice-card">
+            <span class="practice-meta">2019–2024 · Administration</span>
+            <h3>Verantwortung für den funktionierenden IT-Alltag</h3>
+            <p>Als zentraler Ansprechpartner und später selbstständig habe ich heterogene IT-Landschaften nicht nur administriert, sondern im laufenden Betrieb weiterentwickelt.</p>
+            <ul class="practice-list">
+              <li>Server, Netzwerke, Clients und Benutzerbetreuung</li>
+              <li>Beschaffung, Rollouts und Lifecycle-Management</li>
+              <li>Linux-, Windows- und Containerumgebungen</li>
+              <li>Support, Fehleranalyse und Prozessverbesserung</li>
+            </ul>
+          </article>
+          <article class="practice-card">
+            <span class="practice-meta">Seit 2014 · Entwicklung</span>
+            <h3>Software entwickeln, wenn Standard nicht reicht</h3>
+            <p>Meine Erfahrung in der Anwendungsentwicklung ergänzt den Betriebsblick: Ich kann fehlende Werkzeuge, Integrationen und Weblösungen selbst konzipieren und umsetzen.</p>
+            <ul class="practice-list">
+              <li>Individuelle Software- und Webanwendungen</li>
+              <li>Schnittstellen und Datenaustausch</li>
+              <li>Skripte und interne Werkzeuge</li>
+              <li>Vom Prototyp bis zur betreibbaren Lösung</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
     <section class="projects-section" id="projekte">
       <div class="wrap">
         <div class="section-intro">
@@ -308,10 +368,12 @@
         </div>
         <div class="experience-layout">
           <div class="career">
-            <article class="career-row"><span class="career-time">Seit 2024</span><div><h3>IT-Consulting und Infrastrukturprojekte</h3><p>Analyse, Konzeption, technische Umsetzung und Automatisierung in anspruchsvollen Betriebsumgebungen.</p></div></article>
-            <article class="career-row"><span class="career-time">2019–2024</span><div><h3>Systemadministration und IT-Betreuung</h3><p>Verantwortung für Server, Netzwerke, Support, Beschaffung, Rollouts und den stabilen Arbeitsalltag unterschiedlicher Organisationen.</p></div></article>
-            <article class="career-row"><span class="career-time">2014–2019</span><div><h3>Anwendungsentwicklung</h3><p>Entwicklung individueller Software- und Weblösungen, Schnittstellen, Systemintegration und technische Beratung.</p></div></article>
-            <article class="career-row"><span class="career-time">2010–2014</span><div><h3>IT-Einstieg und IHK-Ausbildung</h3><p>Praktischer Einstieg mit anschließender Ausbildung zum Fachinformatiker und breitem Fundament in Entwicklung und Systemtechnik.</p></div></article>
+            <article class="career-row"><span class="career-time">Seit 12/2024</span><div><h3>IT-Consultant · CSP GmbH &amp; Co. KG</h3><p>Infrastruktur- und Migrationsprojekte, technische Automatisierung sowie Abstimmung zwischen Anforderungen und Umsetzung.</p></div></article>
+            <article class="career-row"><span class="career-time">08/2023–11/2024</span><div><h3>Freiberuflicher Systemadministrator &amp; IT-Berater</h3><p>Betreuung von Linux- und Windows-Systemen, Containerbetrieb, Automatisierung und technische Unterstützung für kleinere Unternehmen.</p></div></article>
+            <article class="career-row"><span class="career-time">09/2021–07/2023</span><div><h3>IT-Systemtechniker · AGROTEL GmbH</h3><p>Zentraler IT-Ansprechpartner, Administration der Server- und Netzwerkstruktur, Support sowie Beschaffung und Rollouts.</p></div></article>
+            <article class="career-row"><span class="career-time">06/2019–08/2021</span><div><h3>IT-Systemadministrator · Volkswagen Zentrum Passau</h3><p>Inhouse-IT, Anwendersupport, Hardwarebetreuung, Prozessverbesserungen und Entwicklung interner Software- und Weblösungen.</p></div></article>
+            <article class="career-row"><span class="career-time">2014–2019</span><div><h3>Anwendungsentwicklung · angestellt &amp; selbstständig</h3><p>Individuelle Software- und Weblösungen, Schnittstellen, Systemintegration und technische Beratung.</p></div></article>
+            <article class="career-row"><span class="career-time">2010–2014</span><div><h3>IT-Einstieg und IHK-Ausbildung · RMNit</h3><p>Praktischer Einstieg mit anschließender Ausbildung zum Fachinformatiker und breitem Fundament in Entwicklung und Systemtechnik.</p></div></article>
           </div>
           <aside class="toolbox" aria-label="Technisches Fundament">
             <h3>Technisches Fundament</h3>
